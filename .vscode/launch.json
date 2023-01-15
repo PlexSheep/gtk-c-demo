@@ -1,0 +1,28 @@
+{
+	"configurations": [
+		{
+			"name": "C++ Launch with gdb",
+			"preLaunchTask": "build project",
+			"type": "cppdbg",
+			"cwd": "${workspaceFolder}",
+			"targetArchitecture": "arm64",
+			"externalConsole": false,
+			"request": "launch",
+			"program": "${workspaceFolder}/build/src/demo",
+			"stopAtEntry": false,
+			"customLaunchSetupCommands": [{ "text": "file ${workspaceFolder}/build/src/demo", "description": "run target", "ignoreFailures": false }],
+			"launchCompleteCommand": "exec-run",
+			"linux": {
+				"MIMode": "gdb",
+				"miDebuggerPath": "/usr/bin/gdb"
+			},
+			"osx": {
+				"MIMode": "lldb"
+			},
+			"windows": {
+				"MIMode": "gdb",
+				"miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+			}
+		}
+	]
+}
